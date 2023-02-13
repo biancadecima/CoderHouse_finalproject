@@ -12,7 +12,7 @@ namespace final_project.Controllers
         luego debe cargar los productos recibidos en la base de ProductosVendidos uno por uno por un lado, y descontar el stock en la base de productos por el otro.*/
 
         [HttpPost("/api/Venta/{idUsuario}")]
-        public void LoadSale(long idUsuario, List<Product> soldProducts)
+        public void LoadSale(long idUsuario, [FromBody] List<Product> soldProducts)
         {
             SaleHandler.LoadSale(idUsuario, soldProducts);
         }

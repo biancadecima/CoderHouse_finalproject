@@ -27,7 +27,7 @@ namespace final_project
         public static void LoadSale(long idUser, List<Product> soldProducts)
         {
             Sale sale = new Sale();
-            sale.Id = idUser;
+            sale.UserId = idUser;
             sale.Comments = "Venta realizada";
             long idSale = InsertSale(sale);
             foreach(Product product in soldProducts)

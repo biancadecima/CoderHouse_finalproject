@@ -26,6 +26,7 @@ namespace final_project
 
             app.UseAuthorization();
 
+            app.UseCors(action => action.AllowAnyOrigin());
 
             app.MapControllers();
 
