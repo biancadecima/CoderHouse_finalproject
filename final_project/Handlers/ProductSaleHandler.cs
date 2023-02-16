@@ -38,15 +38,26 @@ namespace final_project
             }
         }
 
-        //Traer ProductosVendidos: Traer Todos los productos vendidos de un Usuario, cuya información está en su producto
-        //(Utilizar dentro de esta función el "Traer Productos" anteriormente hecho para saber que productosVendidos ir a buscar).
-
-        public static List<Product> GetUsersSoldProducts(long userId)
+        public static void DeleteProductSaleBySaleID(long saleId)
         {
-            List<Product> usersSoldProducts = new List<Product>();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand("SELECT Producto.Descripciones FROM Producto inner join ProductoVendido ON ProductoVendido.IdProducto = Producto.Id where IdUsuario = @IdUsuario", connection);
+                SqlCommand command = new SqlCommand("delete from ProductoVendido where IdVenta = @saleId", connection);
+                const string ParameterName = "@saleId";
+                command.Parameters.AddWithValue(ParameterName, saleId);
+                connection.Open();
+
+                command.ExecuteNonQuery();
+            }
+        }
+
+        //Traer ProductosVendidos: Traer Todos los productos vendidos de un Usuario.Devuelve un Lista de objetos ProductoVendido.
+        public static List<ProductSale> GetUsersSoldProducts(long userId)
+        {
+            List<ProductSale> usersSoldProducts = new List<ProductSale>();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT ProductoVendido.Id, ProductoVendido.Stock, ProductoVendido.IdProducto, ProductoVendido.IdVenta from ProductoVendido inner join Producto ON ProductoVendido.IdProducto = Producto.Id where IdUsuario = @IdUsuario", connection);
                 const string ParameterName = "@IdUsuario";
                 command.Parameters.AddWithValue(ParameterName, userId);
                 connection.Open();
@@ -56,15 +67,13 @@ namespace final_project
                 {
                     while (reader.Read())
                     {
-                        Product product = new Product();
-                        product.Id = reader.GetInt64(0);
-                        product.Descriptions = reader.GetString(1);
-                        product.Cost = reader.GetDecimal(2);
-                        product.SalePrice = reader.GetDecimal(3);
-                        product.Stock = reader.GetInt32(4);
-                        product.UserId = reader.GetInt64(5);
+                        ProductSale productSale = new ProductSale();
+                        productSale.Id = reader.GetInt64(0);
+                        productSale.Stock = reader.GetInt32(1);
+                        productSale.ProductId = reader.GetInt64(2);
+                        productSale.SaleId = reader.GetInt64(3);
 
-                        usersSoldProducts.Add(product);
+                        usersSoldProducts.Add(productSale);
                     }
                 }
             }

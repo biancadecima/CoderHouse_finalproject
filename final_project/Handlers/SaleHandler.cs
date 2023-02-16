@@ -9,6 +9,35 @@ namespace final_project
 {
     public class SaleHandler : SqlHandler
     {
+        //Traer Ventas: Recibe como parámetro un IdUsuario, debe traer todas las ventas de la base asignados al usuario particular.
+        public static List<Sale> GetUserSale(long userId)
+        {
+            List<Sale> userSales = new List<Sale>();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand("select * from Venta where IdUsuario = @idUsuario", connection);
+                const string ParameterName = "@idUsuario";
+                command.Parameters.AddWithValue(ParameterName, userId);
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        Sale sale = new Sale();
+                        sale.Id = reader.GetInt64(0);
+                        sale.Comments = reader.GetString(1);
+                        sale.UserId = reader.GetInt64(2);
+
+                        userSales.Add(sale);
+                    }
+                }
+
+                return userSales;
+            }
+        }
+
         public static long InsertSale(Sale sale)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -40,34 +69,28 @@ namespace final_project
                 ProductHandler.UpdateProductStock(product.Id, 1);
             }
         }
-        
-        //Traer Ventas: Recibe como parámetro un IdUsuario, debe traer todas las ventas de la base asignados al usuario particular.
-        public static List<Sale> GetUserSale(long userId)
+
+        public static void DeleteSale(long userId)
         {
-            List<Sale> userSales = new List<Sale>();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand("select * from Venta where IdUsuario = @idUsuario", connection);
-                const string ParameterName = "@idUsuario";
+                List<Sale> userSales = GetUserSale(userId);
+                foreach(Sale sale in userSales)
+                {
+                    ProductSaleHandler.DeleteProductSaleBySaleID(sale.Id);
+                }
+
+ 
+                SqlCommand command = new SqlCommand("delete from Venta where IdUsuario = @id", connection);
+                const string ParameterName = "@id";
                 command.Parameters.AddWithValue(ParameterName, userId);
                 connection.Open();
 
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        Sale sale = new Sale();
-                        sale.Id = reader.GetInt64(0);
-                        sale.Comments = reader.GetString(1);
-                        sale.UserId = reader.GetInt64(2);
+                command.ExecuteNonQuery();
 
-                        userSales.Add(sale);
-                    }
-                }
-
-                return userSales;
             }
+
         }
+
     }
 }
