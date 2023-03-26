@@ -1,5 +1,6 @@
 # CoderHouse FINAL PROJECT
 ------------------------------------ ENG ------------------------------------
+
 STATEMENT CODERHOUSE FINAL PROJECT:
 
 Create an API that follows the instructions below:
@@ -18,6 +19,7 @@ Bring Sold Products: Bring all the products sold by a User. Returns a List of So
 Bring Sales: You must bring all the sales of the base that a User has made. It receives the User id as a URL parameter and returns a list of Sale objects.
 
 ------------------------------------ ESP ------------------------------------
+
 CONSIGNA PROYECTO FINAL CODERHOUSE:
 
 Crear una API que siga las siguientes instrucciones:
