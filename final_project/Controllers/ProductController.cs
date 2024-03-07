@@ -8,7 +8,7 @@ namespace final_project.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        //Traer Productos: Debe traer todos los productos cargados en la base por un Usuario. El idUsuario viene como parámetro de la URL.
+        //GetProducts: You must bring all the products loaded into the base by a User. The userid comes as a parameter of the URL.
         [HttpGet("/api/Producto/{idUsuario}")]
         public List<Product> GetUsersProducts(long idUsuario)
         {
@@ -16,23 +16,23 @@ namespace final_project.Controllers
             return usersProducts;
         }
 
-        /*Crear producto: Recibe un producto como parámetro, deberá crearlo, puede ser void*/
+        /*CreateProduct: Receives a Product object in the request body and creates a new user in the database.*/
         [HttpPost("/api/Producto")]
         public void InsertProduct([FromBody] Product product)
         {
             ProductHandler.InsertProduct(product);
         }
 
-        /*Modificar producto: Recibe un producto como parámetro, debe modificarlo con la nueva información.*/
+        /*ModifyProduct: Receives a Product object in the request body and must be modified in the database*/
         [HttpPut("/api/Producto")]
         public void ModifyProduct([FromBody] Product product)
         {
             ProductHandler.UpdateProduct(product);
         }
 
-        /* Eliminar producto: Recibe un id de producto a eliminar y debe eliminarlo de la base de datos (eliminar antes sus productos vendidos tambien, sino no lo podrá hacer).*/
+        /*DeleteProduct: Receives the Id number of a product to delete as a URL parameter and must delete it from the database. */
         [HttpDelete("/api/Producto/{id}")]
-        public void DeleteProduct([FromBody] long id)
+        public void DeleteProduct(long id)
         {
             ProductHandler.DeleteProduct(id);
         }

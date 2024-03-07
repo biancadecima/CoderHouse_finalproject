@@ -1,0 +1,305 @@
+{
+	"info": {
+		"_postman_id": "feef3b12-ecf6-4b45-897a-d52adda54b05",
+		"name": "finalproject",
+		"description": "# CoderHouse final project requests\n\n- **LogIn**: The user name and password are passed as parameters, search the database if the user exists and if it matches the password it returns it.\n- **CreateUser**: Receives a User-type json and must immediately register the user in the database\n- **ModifyUser**: All user data will be received by a json and it must be modified with the new data (Do not create a new one).\n- **GetUser**: It must receive a user's name in the URL, look it up in the database and return a User object.\n- **DeleteUser**: Receives the ID of the user to delete in the URL and must delete it from the database.\n- **CreateProduct**: Receives a Product object in the request body and creates a new user in the database.\n- **ModifyProduct**: Receives a Product object in the request body and must be modified in the database.\n- **DeleteProduct**: Receives the Id number of a product to delete as a URL parameter and must delete it from the database.\n- **LoadSale**: Receives a list of products and the UserID number of the person who made it, first load a new sale in the database, then load the received products in the ProductSold base one by one on one side, and discount the stock in the product base on the other.\n- **GetProducts**: You must bring all the products loaded into the base by a User. The userid comes as a parameter of the URL.\n- **GetUsersSoldProducts**: Bring all the products sold by a User. Returns a List of SoldProduct objects.\n- **GetSales**: You must bring all the sales of the base that a User has made. It receives the User id as a URL parameter and returns a list of Sale objects.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25702085"
+	},
+	"item": [
+		{
+			"name": "LogIn",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/Usuario/bdecima/biancabianca",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Usuario",
+						"bdecima",
+						"biancabianca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/Usuario/bdecima",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Usuario",
+						"bdecima"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"federico\",\r\n   \"surname\": \"fernandez\",\r\n    \"username\": \"fercho\",\r\n    \"password\": \"fefenandez\",\r\n    \"mail\": \"fnandez@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Usuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ModifyUser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 4,\r\n    \"name\": \"Miranda\",\r\n    \"surname\": \"Leon\",\r\n    \"username\": \"miril\",\r\n    \"password\": \"miri123\",\r\n    \"mail\": \"mirileon@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Usuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUser",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/Usuario/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Usuario",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"descriptions\": \"Jabón\",\r\n    \"cost\": 100.50,\r\n    \"salePrice\": 150.30,\r\n    \"stock\": 100,\r\n    \"userId\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Producto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Producto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProducts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/Producto/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Producto",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ModifyProduct",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 17,\r\n    \"descriptions\": \"Esponja de baño\",\r\n    \"cost\": 140.50,\r\n    \"salePrice\": 170.30,\r\n    \"stock\": 300,\r\n    \"userId\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Producto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Producto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteProduct",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/Producto/17",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Producto",
+						"17"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoadSale",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"id\": 14,\r\n    \"descriptions\": \"Jabón\",\r\n    \"cost\": 100.5,\r\n    \"salePrice\": 150.3,\r\n    \"stock\": 100,\r\n    \"userId\": 3\r\n  },\r\n  {\r\n    \"id\": 14,\r\n    \"descriptions\": \"Jabón\",\r\n    \"cost\": 100.5,\r\n    \"salePrice\": 150.3,\r\n    \"stock\": 100,\r\n    \"userId\": 3\r\n  },\r\n  {\r\n    \"id\": 15,\r\n    \"descriptions\": \"Shampoo\",\r\n    \"cost\": 150.5000,\r\n    \"salePrice\": 200.3000,\r\n    \"stock\": 130,\r\n    \"userId\": 3\r\n  },\r\n  {\r\n    \"id\": 16,\r\n    \"descriptions\": \"Acondicionador\",\r\n    \"cost\": 140.5000,\r\n    \"salePrice\": 170.3000,\r\n    \"stock\": 120,\r\n    \"userId\": 3\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Venta/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Venta",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetSales",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/Venta/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Venta",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUsersSoldProducts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/ProductoVendido/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"ProductoVendido",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

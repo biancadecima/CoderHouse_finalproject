@@ -7,7 +7,7 @@ namespace final_project.Controllers
     [ApiController]
     public class ProductSaleController : ControllerBase
     {
-        //Traer Productos Vendidos: Traer Todos los productos vendidos de un Usuario.Devuelve un Lista de objetos ProductoVendido.
+        //GetUsersSoldProducts: Bring all the products sold by a User. Returns a List of SoldProduct objects.
         [HttpGet("/api/ProductoVendido/{idUsuario}")]
         public List<ProductSale> GetUsersSoldProducts(long idUsuario)
         {

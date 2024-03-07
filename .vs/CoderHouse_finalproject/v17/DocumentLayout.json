@@ -1,0 +1,199 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Urano\\source\\CoderHouse_finalproject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\Properties\\launchSettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:final_project\\Properties\\launchSettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\appsettings.Development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:final_project\\appsettings.Development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:final_project\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:final_project\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\Controllers\\UserController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:final_project\\Controllers\\UserController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\Handlers\\UserHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:final_project\\Handlers\\UserHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\Handlers\\SaleHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:final_project\\Handlers\\SaleHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\Handlers\\ProductHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:final_project\\Handlers\\ProductHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\Handlers\\ProductSaleHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:final_project\\Handlers\\ProductSaleHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\ADO.NET\\SqlHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:final_project\\ADO.NET\\SqlHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "final_project\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\appsettings.Development.json",
+              "RelativeToolTip": "final_project\\appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-03-07T01:09:12.218Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "final_project\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\Properties\\launchSettings.json",
+              "RelativeToolTip": "final_project\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-03-06T20:50:40.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\appsettings.json",
+              "RelativeDocumentMoniker": "final_project\\appsettings.json",
+              "ToolTip": "C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\appsettings.json",
+              "RelativeToolTip": "final_project\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-03-06T20:50:31.852Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "final_project\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\Controllers\\UserController.cs",
+              "RelativeToolTip": "final_project\\Controllers\\UserController.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAcwA8AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-06T20:20:00.092Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\Program.cs",
+              "RelativeDocumentMoniker": "final_project\\Program.cs",
+              "ToolTip": "C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\Program.cs",
+              "RelativeToolTip": "final_project\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-06T20:13:48.935Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProductSaleHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\Handlers\\ProductSaleHandler.cs",
+              "RelativeDocumentMoniker": "final_project\\Handlers\\ProductSaleHandler.cs",
+              "ToolTip": "C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\Handlers\\ProductSaleHandler.cs",
+              "RelativeToolTip": "final_project\\Handlers\\ProductSaleHandler.cs",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAADkAAABQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-06T19:00:49.273Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProductHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\Handlers\\ProductHandler.cs",
+              "RelativeDocumentMoniker": "final_project\\Handlers\\ProductHandler.cs",
+              "ToolTip": "C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\Handlers\\ProductHandler.cs",
+              "RelativeToolTip": "final_project\\Handlers\\ProductHandler.cs",
+              "ViewState": "AQIAAGwAAAAAAAAAAAAAAGgAAABQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-06T18:11:38.327Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SaleHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\Handlers\\SaleHandler.cs",
+              "RelativeDocumentMoniker": "final_project\\Handlers\\SaleHandler.cs",
+              "ToolTip": "C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\Handlers\\SaleHandler.cs",
+              "RelativeToolTip": "final_project\\Handlers\\SaleHandler.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAEoAAABQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-06T18:09:59.362Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\Handlers\\UserHandler.cs",
+              "RelativeDocumentMoniker": "final_project\\Handlers\\UserHandler.cs",
+              "ToolTip": "C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\Handlers\\UserHandler.cs",
+              "RelativeToolTip": "final_project\\Handlers\\UserHandler.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAWwBYAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-06T00:26:42.606Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SqlHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\ADO.NET\\SqlHandler.cs",
+              "RelativeDocumentMoniker": "final_project\\ADO.NET\\SqlHandler.cs",
+              "ToolTip": "C:\\Users\\Urano\\source\\CoderHouse_finalproject\\final_project\\ADO.NET\\SqlHandler.cs",
+              "RelativeToolTip": "final_project\\ADO.NET\\SqlHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-04T18:51:48.039Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 250,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

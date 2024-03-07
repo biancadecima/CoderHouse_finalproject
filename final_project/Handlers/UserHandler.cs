@@ -9,14 +9,12 @@ namespace final_project
 {
     internal class UserHandler : SqlHandler
     {
-        //Inicio de sesión: Se le pase como parámetro el nombre del usuario y la contraseña,
-        //buscar en la base de datos si el usuario existe y si coincide con la contraseña lo devuelve(el objeto Usuario), 
-        //caso contrario devuelve uno vacío(Con sus datos vacíos y el id en 0)
+        //LogIn: The user name and password are passed as parameters, search the database if the user exists and if it matches the password it returns it.
         public static User LogIn(string username, string password)
         {
             User user = new User();
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand("select * from Usuario where NombreUsuario = @NombreUsuario AND Contraseña = @Contraseña", connection);
                 command.Parameters.AddWithValue("@NombreUsuario", username);
@@ -40,14 +38,12 @@ namespace final_project
             return user;
         }
 
-        //Traer Usuario: Recibe como parámetro un nombre del usuario, buscarlo en la base de datos
-        //y devolver el objeto con todos sus datos(Esto se hará para la pagina en la que se
-        //mostrara los datos del usuario y en la página para modificar sus datos).
+        //GetUser: It must receive a user's name in the URL, look it up in the database and return a User object.
 
         public static User GetUser(string username)
         {
             User user = new User();
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand("select * from Usuario where NombreUsuario = @username", connection);
                 command.Parameters.AddWithValue("@username", username);
@@ -68,35 +64,10 @@ namespace final_project
 
             return user;
         }
-
-        /*public static User GetUserByID(long id)
-        {
-            User user = new User();
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand("select * from Usuario where Id = @id", connection);
-                command.Parameters.AddWithValue("@id", id);
-                connection.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    reader.Read();
-                    user.Id = reader.GetInt64(0);
-                    user.Name = reader.GetString(1);
-                    user.Surname = reader.GetString(2);
-                    user.Username = reader.GetString(3);
-                    user.Password = reader.GetString(4);
-                    user.Mail = reader.GetString(5);
-                }
-            }
-
-            return user;
-        }*/
-
+        /*CreateUser: Receives a User-type json and must immediately register the user in the database*/
         public static void InsertUser(User user)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand("insert into Usuario (Nombre, Apellido, NombreUsuario, Contraseña, Mail) values (@name, @surname, @username, @password, @mail)", connection);
                 command.Parameters.AddWithValue("@name", user.Name);
@@ -110,10 +81,10 @@ namespace final_project
                 command.ExecuteNonQuery();
             }
         }
-
+        /*ModifyUser: All user data will be received by a json and it must be modified with the new data (Do not create a new one).*/
         public static void UpdateUser(User user)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand("update Usuario set Nombre = @name, Apellido = @surname, NombreUsuario = @username, Contraseña = @password, Mail = @mail  where Id = @id", connection);
                 command.Parameters.AddWithValue("@name", user.Name);
@@ -127,10 +98,10 @@ namespace final_project
                 command.ExecuteNonQuery();
             }
         }
-        
+        /*DeleteUser: Receives the ID of the user to delete in the URL and must delete it from the database.*/
         public static void DeleteUser(long id)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 List<Product> userProducts = ProductHandler.GetUsersProducts(id);
                 foreach(Product product in userProducts)

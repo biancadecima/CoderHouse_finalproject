@@ -4,6 +4,9 @@ namespace final_project
     {
         public static void Main(string[] args)
         {
+            string connectionString = Environment.GetEnvironmentVariable("DATABASE_CONNECTION_STRING");
+            SqlHandler.ConnectionString = connectionString;
+
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.

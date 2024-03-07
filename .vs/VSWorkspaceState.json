@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\final_project"
+    "\\final_project",
+    "\\final_project\\ADO.NET",
+    "\\final_project\\Handlers",
+    "\\final_project\\Models",
+    "\\final_project\\Properties"
   ],
-  "SelectedNode": "\\final_project",
   "PreviewInSolutionExplorer": false
 }

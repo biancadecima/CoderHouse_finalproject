@@ -9,11 +9,11 @@ namespace final_project
 {
     public class SaleHandler : SqlHandler
     {
-        //Traer Ventas: Recibe como parámetro un IdUsuario, debe traer todas las ventas de la base asignados al usuario particular.
+        //GetSales: You must bring all the sales of the base that a User has made. It receives the User id as a URL parameter and returns a list of Sale objects.
         public static List<Sale> GetUserSale(long userId)
         {
             List<Sale> userSales = new List<Sale>();
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand("select * from Venta where IdUsuario = @idUsuario", connection);
                 const string ParameterName = "@idUsuario";
@@ -37,10 +37,10 @@ namespace final_project
                 return userSales;
             }
         }
-
+        /*InsertSale: creates a sale*/
         public static long InsertSale(Sale sale)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand("insert into Venta(Comentarios, IdUsuario) values (@comentarios, @idUsuario); select @@identity", connection);
                 command.Parameters.AddWithValue("@comentarios", sale.Comments);
@@ -51,8 +51,8 @@ namespace final_project
             }
         }
 
-        /*Cargar Venta: Recibe una lista de productos y el numero de IdUsuario de quien la efectuó, primero cargar una nueva venta en la base de datos, 
-        luego debe cargar los productos recibidos en la base de ProductosVendidos uno por uno por un lado, y descontar el stock en la base de productos por el otro.*/
+        /*LoadSale: Receives a list of products and the UserID number of the person who made it, first load a new sale in the database,
+         * then load the received products in the ProductSold base one by one on one side, and discount the stock in the product base on the other.*/
         public static void LoadSale(long idUser, List<Product> soldProducts)
         {
             Sale sale = new Sale();
@@ -72,7 +72,7 @@ namespace final_project
 
         public static void DeleteSale(long userId)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 List<Sale> userSales = GetUserSale(userId);
                 foreach(Sale sale in userSales)

@@ -9,9 +9,10 @@ namespace final_project
 {
     internal class ProductHandler : SqlHandler
     {
+        /*CreateProduct: Receives a Product object in the request body and creates a new user in the database.*/
         public static void InsertProduct(Product product)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand("insert into Producto (Descripciones, Costo, PrecioVenta, Stock, IdUsuario) values (@description, @cost, @salePrice, @stock, @userId)", connection);
                 command.Parameters.AddWithValue("@description", product.Descriptions);
@@ -26,10 +27,10 @@ namespace final_project
             }
 
         }
-
+        /*ModifyProduct: Receives a Product object in the request body and must be modified in the database*/
         public static int UpdateProduct(Product product)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand("update Producto set Descripciones = @description, Costo = @cost, PrecioVenta = @salePrice, Stock = @stock, IdUsuario = @userId  where Id = @id", connection);
                 command.Parameters.AddWithValue("@description", product.Descriptions);
@@ -51,9 +52,10 @@ namespace final_project
             return UpdateProduct(product);
         }
 
+        /*DeleteProduct: Receives the Id number of a product to delete as a URL parameter and must delete it from the database.*/
         public static void DeleteProduct(long id)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 ProductSaleHandler.DeleteProductSale(id);
                 SqlCommand command = new SqlCommand("delete from Producto where Id = @id", connection);
@@ -65,12 +67,11 @@ namespace final_project
             }
         }
 
-        //Traer Productos: Recibe un número de IdUsuario como parámetro,
-        //debe traer todos los productos cargados en la base de este usuario en particular.
+        //GetProducts: You must bring all the products loaded into the base by a User. The userid comes as a parameter of the URL.
         public static List<Product> GetUsersProducts(long userId)
         {
             List<Product> usersProducts = new List<Product>();
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand("select * from Producto where IdUsuario = @idUsuario", connection);
                 const string ParameterName = "@idUsuario";
@@ -101,7 +102,7 @@ namespace final_project
         public static Product GetProduct(long Id)
         {
             Product product = new Product();
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand("select * from Producto where Id = @Id", connection);
                 const string ParameterName = "@Id";

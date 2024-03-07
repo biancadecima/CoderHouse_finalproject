@@ -10,10 +10,10 @@ namespace final_project
 {
     internal class ProductSaleHandler : SqlHandler
     {
-
+        //InsertProductSale: Creates a new product sale.
         public static void InsertProductSale(ProductSale soldProduct)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand("insert into ProductoVendido (Stock, IdProducto, IdVenta) values (@stock, @productId, @saleId)", connection);
                 command.Parameters.AddWithValue("@stock", soldProduct.Stock);
@@ -24,10 +24,10 @@ namespace final_project
                 command.ExecuteNonQuery();
             }
         }
-
+        //DeleteProductSale: Deletes a product sale.
         public static void DeleteProductSale(long productId)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand("delete from ProductoVendido where IdProducto = @productId", connection);
                 const string ParameterName = "@productId";
@@ -37,10 +37,10 @@ namespace final_project
                 command.ExecuteNonQuery();
             }
         }
-
+        //DeleteProductSaleBySaleID: Deletes a product sale by sale ID.
         public static void DeleteProductSaleBySaleID(long saleId)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand("delete from ProductoVendido where IdVenta = @saleId", connection);
                 const string ParameterName = "@saleId";
@@ -51,11 +51,11 @@ namespace final_project
             }
         }
 
-        //Traer ProductosVendidos: Traer Todos los productos vendidos de un Usuario.Devuelve un Lista de objetos ProductoVendido.
+        //GetUsersSoldProducts: Bring all the products sold by a User. Returns a List of SoldProduct objects.
         public static List<ProductSale> GetUsersSoldProducts(long userId)
         {
             List<ProductSale> usersSoldProducts = new List<ProductSale>();
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand("SELECT ProductoVendido.Id, ProductoVendido.Stock, ProductoVendido.IdProducto, ProductoVendido.IdVenta from ProductoVendido inner join Producto ON ProductoVendido.IdProducto = Producto.Id where IdUsuario = @IdUsuario", connection);
                 const string ParameterName = "@IdUsuario";

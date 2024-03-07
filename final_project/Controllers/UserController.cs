@@ -8,8 +8,7 @@ namespace final_project.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        //Inicio de sesión: Se le pasa como parámetro el nombre del usuario y la contraseña,
-        //buscar en la base de datos si el usuario existe y si coincide con la contraseña lo devuelve.
+        //LogIn: The user name and password are passed as parameters, search the database if the user exists and if it matches the password it returns it.
         [HttpGet("/api/Usuario/{usuario}/{contrasena}")]
         public User LogIn(string usuario, string contrasena)
         {
@@ -18,7 +17,7 @@ namespace final_project.Controllers
             return user;
         }
 
-        //Debe recibir un nombre del usuario en la URL, se debe buscarlo en la base de datos y devolver un objeto Usuario.
+        //GetUser: It must receive a user's name in the URL, look it up in the database and return a User object.
         [HttpGet("/api/Usuario/{usuario}")]
         public User GetUser(string usuario)
         {
@@ -27,23 +26,21 @@ namespace final_project.Controllers
             return user;
         }
 
-        //Crear Usuario: Recibe un json tipo Usuario y debe dar un alta inmediata del usuario en la base de datos
-        //(Opcional validar que no se repita el mismo nombre de usuario)
+        //CreateUser: Receives a User-type json and must immediately register the user in the database
         [HttpPost("/api/Usuario")]
         public void InsertUser([FromBody] User usuario)
         {
             UserHandler.InsertUser(usuario);
         }
 
-        /*Modificar usuario: Recibe como parámetro un json con todos los datos del objeto usuario y se deberá modificar el mismo con los datos nuevos 
-        * (No crear uno nuevo)*/
+        /*ModifyUser: All user data will be received by a json and it must be modified with the new data (Do not create a new one).*/
         [HttpPut("/api/Usuario")]
         public void ModifyUser([FromBody] User user)
         {
             UserHandler.UpdateUser(user);
         }
 
-        //Eliminar Usuario: Recibe el ID del usuario a eliminar en la URL y lo deberá eliminar de la base de datos.
+        //DeleteUser: Receives the ID of the user to delete in the URL and must delete it from the database.
         [HttpDelete("/api/Usuario/{id}")]
         public void DeleteUser(long id)
         {

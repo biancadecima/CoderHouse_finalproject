@@ -8,8 +8,7 @@ namespace final_project.Controllers
     [ApiController]
     public class SaleController : ControllerBase
     {
-        //Traer Ventas: Debe traer todas las ventas de la base que ha efectuado un Usuario.
-        //Recibe como parámetro URL el id de Usuario y devuleve una lista de objetos Venta.
+        //GetSales: You must bring all the sales of the base that a User has made. It receives the User id as a URL parameter and returns a list of Sale objects.
         [HttpGet("/api/Venta/{idUsuario}")]
         public List<Sale> GetSales(long idUsuario) 
         {
@@ -18,8 +17,9 @@ namespace final_project.Controllers
         }
 
 
-        /*Cargar Venta: Recibe una lista de productos y el numero de IdUsuario de quien la efectuó, primero cargar una nueva venta en la base de datos, 
-        luego debe cargar los productos recibidos en la base de ProductosVendidos uno por uno por un lado, y descontar el stock en la base de productos por el otro.*/
+        /*LoadSale: Receives a list of products and the UserID number of the person who made it, 
+         * first load a new sale in the database, then load the received products in the ProductSold base one by one on one side, 
+         * and discount the stock in the product base on the other.*/
 
         [HttpPost("/api/Venta/{idUsuario}")]
         public void LoadSale(long idUsuario, [FromBody] List<Product> soldProducts)
